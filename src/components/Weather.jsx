@@ -44,7 +44,6 @@ const Weather = () => {
         alert(data.messsage);
         return;
       }
-      console.log(data);
       const icon = allIcons[data.weather[0].icon] || clear_icon;
       setWeatherData({
         humidity: data.main.humidity,
@@ -53,6 +52,7 @@ const Weather = () => {
         location: data.name,
         icon,
       });
+      // eslint-disable-next-line no-unused-vars
     } catch (error) {
       console.error("Couldn't fetch the data");
       setWeatherData(false);
